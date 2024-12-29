@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Educational Tools - Explore Our Tools</title>
+    <link rel="icon" href="/muhubsite.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Readex Pro', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #000851;
+            color: #f8f9fa;
+        }
+        nav {
+            position: fixed;
+            width: 100%;
+            background-color: rgba(11, 11, 31, 0.8);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            z-index: 1000;
+            height: 70px;
+            display: flex;
+            align-items: center;
+        }
+        .nav-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        .logo a {
+            font-family: 'Readex Pro', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-decoration: none;
+            color: var(--text-color);
+            background: linear-gradient(45deg, #2B3FF7, #00F0FF);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-top: 0;
+        }
+        .logo img {
+            height: 50px;
+            margin-right: 5px;
+            vertical-align: middle;
+        }
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            list-style: none;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 500;
+            transition: all 0.3s;
+            position: relative;
+        }
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(45deg, #2B3FF7, #00F0FF);
+            transition: width 0.3s;
+        }
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+        .hero {
+            text-align: center;
+            padding: 60px 20px;
+            background: linear-gradient(to right, #2B3FF7, #03b4c1);
+            color: white;
+        }
+        .hero h1 {
+            font-family: 'Readex Pro', sans-serif;
+            font-size: 4.5rem;
+        }
+        .hero p {
+            font-family: 'Readex Pro', sans-serif;
+            font-size: 1.5em;
+            margin-bottom: 20px;
+        }
+        .search-bar {
+            margin: 0 auto;
+            text-align: center;
+        }
+        .search-bar input {
+            padding: 15px;
+            width: 400px;
+            border-radius: 30px;
+            border: 2px solid #2B3FF7;
+            outline: none;
+            font-size: 1.2rem;
+            transition: border 0.3s;
+        }
+        .search-bar input:focus {
+            border: 2px solid #03b4c1;
+        }
+        .search-bar button {
+            padding: 15px 25px;
+            font-size: 1.3rem;
+            border-radius: 30px;
+            border: none;
+            background-color: #2B3FF7;
+            color: white;
+            cursor: pointer;
+            transition: background 0.3s;
+            margin-left: 10px;
+        }
+        .search-bar button:hover {
+            background-color: #03b4c1;
+        }
+        .tools-section {
+            padding: 50px 20px;
+            text-align: center;
+        }
+        .tools-section h2 {
+            font-family: 'Readex Pro', sans-serif;
+            font-size: 2rem; /* Reduced font size */
+            margin-bottom: 20px;
+        }
+        .tools-section .tool {
+            display: inline-block;
+            width: 22%;
+            margin: 1%;
+            vertical-align: top;
+        }
+        .tools-section .tool a {
+            text-decoration: none;
+            color: inherit;
+        }
+        .tools-section .tool i {
+            background: linear-gradient(45deg, #2B3FF7, #03b4c1);
+            color: white;
+            border-radius: 10px;
+            padding: 30px;
+            width: 60px;
+            height: 60px;
+            align-items: center;
+            justify-content: center;
+        }
+        .tools-section .tool p {
+            font-size: 0.8rem;
+            margin-bottom: 30px;
+        }
+        .tools-section .tool .cta {
+            padding: 10px 20px;
+            font-size: 0.9rem;
+            border-radius: 20px;
+            border: none;
+            background-color: #2B3FF7;
+            color: white;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .tools-section .tool .cta:hover {
+            background-color: #03b4c1;
+        }
+        footer {
+            background-color: #000851;
+            color: #f8f9fa;
+            padding: 20px;
+            text-align: center;
+        }
+        footer a {
+            margin: 0 10px;
+            text-decoration: none;
+            color: #f8f9fa;
+        }
+        @media (max-width: 1024px) {
+            .tools-section .tool {
+                width: 30%;
+                margin: 1%;
+            }
+            .nav-content {
+                padding: 1rem;
+            }
+            .hero h1 {
+                font-size: 3rem;
+            }
+            .hero p {
+                font-size: 1rem;
+            }
+            .hero button {
+                font-size: 0.9rem;
+                padding: 8px 16px;
+            }
+        }
+        @media (max-width: 680px) and (min-width: 300px) {
+                .tools-section h2 {
+                        font-size: 1.5rem;
+                }
+            .tools-section .tool {
+                width: 30%;
+                margin: 1%;
+            }
+            .tools-section .tool i {
+                width: 50px;
+                height: 50px;
+                padding: 15px;
+                border-radius: 5px;
+                font-size: 2.5rem;
+            }
+            .tools-section .tool p {
+                font-size: 0.5rem;
+                margin-bottom: 30px;
+            }
+            .nav-links {
+                gap: 1rem;
+            }
+            .hero h1 {
+                font-size: 1.85rem;
+            }
+            .hero p {
+                font-size: 0.8rem;
+            }
+            .search-bar input {
+                width: 150px;
+                font-size: 1rem;
+            }
+            .search-bar button {
+                padding: 10px 20px;
+                font-size: 1rem;
+            }
+            footer {
+                font-size: 0.8rem;
+            }
+        }
+        @media (max-width: 300px) {
+            .tools-section .tool {
+                width: 100%;
+                margin: 10px 0;
+            }
+            .tools-section .tool i {
+                width: 40px;
+                height: 40px;
+                padding: 10px;
+                border-radius: 5px;
+                font-size: 1.2rem;
+            }
+            .hero h1 {
+                font-size: 1.5rem;
+            }
+            .hero p {
+                font-size: 1rem;
+            }
+            .hero button {
+                font-size: 0.9rem;
+                padding: 8px 16px;
+            }
+            footer {
+                font-size: 0.7rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-content">
+            <div class="logo">
+                <img src="/logoo.png" alt="Logo">
+                <a href="index.html">SET</a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="/SET/main.html">Home</a></li>
+                <li><a href="#tools">Tools</a></li>
+            </ul>
+        </div>
+    </nav>
+    <section id="home" class="hero">
+        <h1>Explore Our Tools</h1>
+        <p>Find the perfect tool to simplify your learning journey</p>
+        <div class="search-bar">
+                <input type="text" id="searchInput" placeholder="Search tools by name, category, or keyword...">
+                <button onclick="filterTools()"><i class="fas fa-search"></i></button>
+            </div>
+    </section>
+    <section id="tools" class="tools-section">
+        <h2 id="toolsHeading">All Tools</h2>
+        <div class="tool" data-category="automata" data-difficulty="beginner" data-type="simulators">
+            <a href="comingsoon.html">
+                <i class="fas fa-calculator fa-3x"></i>
+                <p>Simultaneous Eqn Solver</p>
+            </a>
+        </div>
+        <div class="tool" data-category="grammars" data-difficulty="intermediate" data-type="problem-solvers">
+            <a href="comingsoon.html">
+                <i class="fas fa-square-root-alt fa-3x"></i>
+                <p>Quadratic Eqn Solver</p>
+            </a>
+        </div>
+        <div class="tool" data-category="complexity" data-difficulty="advanced" data-type="visualizers">
+            <a href="comingsoon.html">
+                <i class="fas fa-chart-line fa-3x"></i>
+                <p>Differentiation Solver</p>
+            </a>
+        </div>
+        <div class="tool" data-category="automata" data-difficulty="beginner" data-type="simulators">
+            <a href="comingsoon.html">
+                <i class="fas fa-chart-bar fa-3x"></i>
+                <p>Integration Solver</p>
+            </a>
+        </div>
+        <div class="tool" data-category="automata" data-difficulty="intermediate" data-type="simulators">
+            <a href="comingsoon.html">
+                <i class="fa fa-cogs fa-3x"></i>
+                <p>Automata Simulator</p>
+            </a>
+        </div>
+        <div class="tool" data-category="grammars" data-difficulty="advanced" data-type="problem-solvers">
+            <a href="comingsoon.html">
+                <i class="fa-solid fa-g fa-3x"></i>
+                <p>Grammar Converter</p>
+            </a>
+        </div>
+        <div class="tool" data-category="automata" data-difficulty="beginner" data-type="simulators">
+            <a href="comingsoon.html">
+                <i class="fa-solid fa-x fa-3x"></i>
+                <p>REGEX to Automata</p>
+            </a>
+        </div>
+        <div class="tool" data-category="complexity" data-difficulty="intermediate" data-type="visualizers">
+            <a href="comingsoon.html">
+                <i class="fa fa-table fa-3x"></i>
+                <p>Computation Table Generator</p>
+            </a>
+        </div>
+    </section>
+    <footer>
+        <p>&copy; 2023 Smart Educational Tools. All rights reserved.</p>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <br><br>
+        <div>
+            <a href="#"><i style="color: #3094ff;" class="fab fa-instagram"></i></a>
+            <a href="#"><i style="color: #3094ff;" class="fab fa-twitter"></i></a>
+            <a href="#"><i style="color: #3094ff;" class="fab fa-telegram"></i></a>
+        </div>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+        });
+
+        function filterTools() {
+            const searchInput = document.getElementById('searchInput').value.toLowerCase();
+            const tools = document.querySelectorAll('.tool');
+            const toolsHeading = document.getElementById('toolsHeading');
+
+            let hasResults = false;
+
+            tools.forEach(tool => {
+                const toolName = tool.querySelector('p').textContent.toLowerCase();
+
+                if (toolName.includes(searchInput) || searchInput === '') {
+                    tool.style.display = 'inline-block';
+                    hasResults = true;
+                } else {
+                    tool.style.display = 'none';
+                }
+            });
+
+            if (searchInput === '') {
+                toolsHeading.textContent = 'All Tools';
+            } else if (hasResults) {
+                toolsHeading.textContent = 'Searched Tools...';
+                document.getElementById('tools').scrollIntoView({ behavior: 'smooth' });
+            } else {
+                toolsHeading.textContent = 'No Tools Found';
+            }
+        }
+    </script>
+</body>
+</html>
