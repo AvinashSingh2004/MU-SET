@@ -16,73 +16,13 @@
             background-color: #000851;
             color: #f8f9fa;
         }
-        nav {
-            position: fixed;
-            width: 100%;
-            background-color: rgba(11, 11, 31, 0.8);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(20px);
-            z-index: 1000;
-            height: 70px;
-            display: flex;
-            align-items: center;
-        }
-        .nav-content {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 1rem 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            width: 100%;
-        }
-        .logo {
-            display: flex;
-            align-items: center;
-        }
-        .logo a {
-            font-family: 'Readex Pro', sans-serif;
-            font-size: 1.5rem;
-            font-weight: 700;
-            text-decoration: none;
-            color: var(--text-color);
-            background: linear-gradient(45deg, #2B3FF7, #00F0FF);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin-top: 0;
-        }
-        .logo img {
-            height: 50px;
+        
+        .hero img {
+            height: 200px;
             margin-right: 5px;
             vertical-align: middle;
         }
-        .nav-links {
-            display: flex;
-            align-items: center;
-            gap: 2rem;
-            list-style: none;
-        }
-        .nav-links a {
-            text-decoration: none;
-            color: var(--text-color);
-            font-weight: 500;
-            transition: all 0.3s;
-            position: relative;
-        }
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: linear-gradient(45deg, #2B3FF7, #00F0FF);
-            transition: width 0.3s;
-        }
-        .nav-links a:hover::after {
-            width: 100%;
-        }
+        
         .hero {
             text-align: center;
             padding: 60px 20px;
@@ -90,6 +30,7 @@
             color: white;
         }
         .hero h1 {
+            margin: 0;
             font-family: 'Readex Pro', sans-serif;
             font-size: 4.5rem;
         }
@@ -190,9 +131,6 @@
                 width: 30%;
                 margin: 1%;
             }
-            .nav-content {
-                padding: 1rem;
-            }
             .hero h1 {
                 font-size: 3rem;
             }
@@ -223,8 +161,8 @@
                 font-size: 0.5rem;
                 margin-bottom: 30px;
             }
-            .nav-links {
-                gap: 1rem;
+            .hero img {
+                height: 150px;
             }
             .hero h1 {
                 font-size: 1.85rem;
@@ -273,19 +211,11 @@
     </style>
 </head>
 <body>
-    <nav>
-        <div class="nav-content">
-            <div class="logo">
-                <img src="/logoo.png" alt="Logo">
-                <a href="index.html">SET</a>
-            </div>
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="#tools">Tools</a></li>
-            </ul>
-        </div>
-    </nav>
+    <a href="javascript:history.back()" style="position: absolute; top: 20px; left: 20px; color: white; font-size: 2rem;">
+        <i class="fas fa-arrow-left"></i>
+    </a>
     <section id="home" class="hero">
+        <img src="/logoo.png" alt="Logo">
         <h1>Explore Our Tools</h1>
         <p>Find the perfect tool to simplify your learning journey</p>
         <div class="search-bar">
