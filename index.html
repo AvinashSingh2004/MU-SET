@@ -89,33 +89,71 @@
         }
         .hero {
             text-align: center;
-            padding: 100px 20px;
+            padding: 80px 20px;
             background: linear-gradient(to right, #2B3FF7, #03b4c1);
             color: white;
         }
         .hero h1 {
+            margin-top: 60px;
             font-family: 'Readex Pro', sans-serif;
             font-size: 2.5em;
         }
         .hero p {
             font-family: 'Readex Pro', sans-serif; /* Ensure Readex Pro font is applied */
-            font-size: 1.2em;
-            margin-top: 10px;
+            font-size: 1.5em;
+            margin-top: 20px;
+        }
+        .hero #p {
+            margin-top: 40px;
         }
         .hero button {
-            padding: 15px 30px;
-            font-size: 1.3em;
             margin-top: 20px;
-            color: #007BFF;
-            background-color: #ffffff;
+            align-self: flex-start;
+            position: relative;
+            background: transparent;
+            border: 2px solid #ffffff;
+            color: #ffffff;
+            padding: 1rem 2.5rem;
             border-radius: 50px;
-            border: none;
-            cursor: pointer;
-            transition: background 0.3s;
+            font-size: 1.2rem;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.3s;
+            overflow: hidden;
         }
+
+        .hero button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 100%;
+            background:linear-gradient(45deg, #2B3FF7, #000851);
+            transition: width 0.3s ease;
+            z-index: 1;
+        }
+
+        .hero button:hover::before {
+            width: 100%;
+        }
+
+        .hero button .button-content {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s;
+        }
+
+        .hero button:hover .button-content {
+            color: white;
+        }
+
         .hero button:hover {
-                background-color: #e0e0e0;
-                transform: scale(1.05);
+            border-color: transparent;
+            transform: translateY(-3px);
         }
         .featured-tools, .why-choose-us, footer {
             padding: 50px 20px;
@@ -220,8 +258,15 @@
             .nav-links {
                 gap: 1rem;
             }
+            .hero {
+                padding: 40px 20px;
+            }
             .hero h1 {
+                margin-top: 80px;
                 font-size: 1.75rem;
+            }
+            .hero #p {
+                margin-top: 20px;
             }
             footer p {
                 font-size: 0.8rem; /* Adjust footer text size */
@@ -272,7 +317,8 @@
     <section id="home" class="hero">
         <h1>Empowering Learning Through Innovation</h1>
         <p>Your Gateway to Smarter Education</p> <!-- Added text below the hero H1 -->
-        <a href="tools.html"><button>Explore Tools</button></a> <!-- Added link to tools.html -->
+        <a href="tools.html"><button><span class="button-content">Explore Tools</span></button></a> <!-- Added link to tools.html --> <!-- Corrected the HTML syntax -->
+        <p id="p">www.mu-hub.site</p>
     </section>
     <section id="tools" class="featured-tools">
         <h2>Featured Tools</h2>
